@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寶可夢 VGC 戰術知識庫與計算機大廳</title>
+    <style>
+        :root {
+            --bg-dark: #1a1a2e;
+            --text-light: #e6e6e6;
+            --primary-blue: #0f3460;
+            --accent-red: #e94560;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-red);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #a0a0b5;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* 互動卡片核心 CSS */
+        .interactive-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 5px solid var(--primary-blue);
+            transition: all 0.3s ease; /* 讓互動變平滑 */
+            display: block;
+            cursor: pointer;
+        }
+
+        /* 當滑鼠移上去時的動態效果 (Hover) */
+        .interactive-card:hover {
+            transform: translateY(-10px); /* 向上浮動 */
+            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3); /* 紅色光暈 */
+            border-left: 5px solid var(--accent-red); /* 邊框變色 */
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .interactive-card h2 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .interactive-card p {
+            color: #b3b3b3;
+            font-size: 1rem;
+        }
+
+        .badge {
+            background-color: var(--accent-red);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .badge-blue {
+            background-color: #4a90e2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🏆 寶可夢 VGC 戰術樞紐</h1>
+        <p>歡迎來到專屬對戰大廳！請點擊下方卡片開啟對應功能。</p>
+    </header>
+
+    <main class="container">
+        <!-- 連結到：傷害計算機 (動態互動區) -->
+        <a href="calculator.html" class="interactive-card">
+            <span class="badge">強烈推薦 (Interactive)</span>
+            <h2>⚔️ 全環境傷害計算機</h2>
+            <p><strong>[互動工具]</strong> 這裡就是你想要的動態系統！可以輸入中文名稱、自動帶入種族值與技能，更改天氣或道具時，傷害百分比與確殺判定會即時互動更新。</p>
+        </a>
+
+        <!-- 連結到：空間隊戰術指南 (靜態閱讀區) -->
+        <a href="tactics/trick-room.html" class="interactive-card">
+            <span class="badge badge-blue">最新戰術 (Wiki)</span>
+            <h2>📚 空間隊 (Trick Room) 指南</h2>
+            <p><strong>[知識庫]</strong> 依照 AGENTS.md 規範生成的標準戰術文件。查閱愛管侍與布莉姆溫的聯防邏輯、速度線控場細節與剋星對策。</p>
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VGC Tactics Wiki & Calculator. 依照 AGENTS.md 規範建構.</p>
+    </footer>
+
+</body>
+</html>
